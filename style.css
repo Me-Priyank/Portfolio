@@ -1,0 +1,216 @@
+@font-face {
+    font-family: 'Machina';
+    src: url('/659dbdfd5a080be8d348316f_PPNeueMachina_\ Light.ttf');
+}
+
+:root{
+    --salmon:#EF9D71;
+    --dsalmon : #532521;
+    --cyan: #AEDEE0;
+    --dcyan: #1f2f32;
+    --black: #000 ;
+    --white : #fff;
+}
+
+body{
+    transition: background-color ease-out .5s;
+}
+
+*::selection{
+    background-color: var(--salmon);
+}
+
+
+
+.loader{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: #000;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    gap: 10px;
+}
+
+.loader-text {
+    position: relative; /* Ensure relative positioning so it can move */
+    color: white;
+    font-size: 2rem;
+    white-space: nowrap;
+}
+
+.loader h3{
+    font-size: 2vw;
+    font-weight: 100;
+}
+
+.vdodiv {
+    --clip: 100%; /* Define the initial value here */
+    clip-path: circle(var(--clip) at 50% 50%);
+}
+
+
+body[theme="black"]{
+    background-color: var(--black);
+}
+
+body[theme="black"] .section{
+    color: var(--white);
+}
+
+body[theme="cyan"]{
+    background-color: var(--cyan);
+}
+
+body[theme="cyan"] .section{
+   color: var(--dcyan);
+}
+
+body[theme="salmon"]{
+    background-color: var(--salmon);
+}
+
+body[theme="salmon"] .section{
+    color: var(--dsalmon);
+}
+
+body[theme="white"]{
+    background-color: var(--white);
+}
+
+body[theme="white"] .section{
+    color: var(--black);
+}
+
+/* Chatbot Container */
+.chatbot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    background-color: #f0f4f8;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Chat Window */
+.chat-window {
+    width: 380px;
+    height: 600px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+}
+
+/* Chat Header */
+.chat-header {
+    background-color: #4a90e2;
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 500;
+    border-radius: 12px 12px 0 0;
+}
+
+/* Chat Messages Container */
+.chat-messages {
+    flex-grow: 1;
+    padding: 15px;
+    background-color: #f9fafb;
+    overflow-y: auto;
+    border-top: 1px solid #e6e6e6;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Chat Messages Style */
+.chat-message {
+    margin-bottom: 10px;
+    padding: 12px 15px;
+    border-radius: 15px;
+    max-width: 70%;
+    word-wrap: break-word;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* User Message Styling */
+.chat-message.user {
+    background-color: #4a90e2;
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 0;
+}
+
+/* Bot Message Styling */
+.chat-message.bot {
+    background-color: #eaeff3;
+    color: #333;
+    align-self: flex-start;
+    border-bottom-left-radius: 0;
+}
+
+/* Chat Questions (Buttons) Container */
+.chat-questions {
+    background-color: #ffffff;
+    border-top: 1px solid #e0e0e0;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+/* Question Buttons Styling */
+.question-btn {
+    padding: 10px 15px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Hover Effect */
+.question-btn:hover {
+    background-color: #357abd;
+}
+
+/* Chat Window Scroll Styling */
+.chat-messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background-color: #cccccc;
+    border-radius: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+    background-color: #999999;
+}
+
+@keyframes bounce-right {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+}
+
+.animate-bounce-right {
+    animation: bounce-right 1s infinite;
+}
