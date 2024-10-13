@@ -138,13 +138,34 @@ function HomePageAnimation(){
     },'b')
 }
 
+function swiper(){
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        loop: true, // Enable infinite loop
+        speed: 20000, // Set a slower speed for smooth movement
+        autoplay: {
+          delay: 0, // No initial delay
+          disableOnInteraction: false, // Continue autoplay even when the user interacts with the slider
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      });
+}
+swiper();
+
 function RealPageAnimation(){
     gsap.to(".slide",{
         scrollTrigger:{
             trigger:".real",
             start:"top top",
             end: "bottom bottom",
-            markers:true,
             scrub : 1
         },
         xPercent:-200,
@@ -268,7 +289,6 @@ function bodyColorChanger(){
             trigger: e,
             start: "top 50%",
             end: "bottom 50%",
-            markers: true,
             onEnter: function () {
                 document.body.setAttribute("theme", e.dataset.color);
             },
@@ -277,6 +297,27 @@ function bodyColorChanger(){
         });
     });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach((card, index) => {
+        gsap.to(card, {
+            opacity: 1,
+            y: 0,
+            scrollTrigger: {
+                trigger: card,
+                start: "top 80%", // Start when the top of the card reaches 80% of the viewport height
+                toggleActions: "play none none reverse",
+                once: true // Only animate once
+            },
+            duration: 0.5,
+            delay: index * 0.1 // Delay each card's animation for a staggered effect
+        });
+    });
+});
 
 
 HomePageAnimation();

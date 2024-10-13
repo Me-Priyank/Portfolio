@@ -3,6 +3,11 @@
     src: url('/659dbdfd5a080be8d348316f_PPNeueMachina_\ Light.ttf');
 }
 
+@font-face {
+    font-family: 'rj';
+    src: url(./Rejouice-Headline.ttf) format('truetype');
+  }
+
 :root{
     --salmon:#EF9D71;
     --dsalmon : #532521;
@@ -20,7 +25,18 @@ body{
     background-color: var(--salmon);
 }
 
+.swiper-slide h1{
+    opacity: 0.8;
+    font-family: 'rj';
+    font-size: 24vw;
+    font-weight: 100;
+    line-height: 27vw;
+}
 
+.swiper-slide h1 span{
+    font-family: 'rj';
+    display: inline-block;
+}
 
 .loader{
     height: 100%;
@@ -214,4 +230,46 @@ body[theme="white"] .section{
 .animate-bounce-right {
     animation: bounce-right 1s infinite;
 }
+
+.scroll-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.scroll-section h1 {
+    font-size: 1.875rem; /* text-3xl */
+    font-weight: 600; /* font-semibold */
+    color: #4B5563; /* text-gray-600 */
+    letter-spacing: 0.05em; /* tracking-wider */
+    text-transform: uppercase; /* uppercase */
+    margin-bottom: 0.5rem; /* mb-2 */
+}
+
+.scroll-section svg {
+    height: 2.5rem; /* h-10 */
+    width: 2.5rem; /* w-10 */
+    color: #2563EB; /* text-blue-600 */
+    animation: bounce 1.5s infinite;
+}
+
+.scroll-section .decorative-line {
+    width: 5rem; /* w-20 */
+    height: 2px; /* h-[2px] */
+    background-color: #2563EB; /* bg-blue-600 */
+    margin-top: 1rem; /* mt-4 */
+}
+
+/* Animation for bouncing arrow */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
 

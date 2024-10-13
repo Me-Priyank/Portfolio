@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <script src="https://unpkg.com/gsap@3.9.0/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3.9.0/dist/ScrollTrigger.min.js"></script></head>
 <body theme = "black">
     <div id="loader" class="loader">
         <h3>Hello || </h3>
@@ -18,20 +21,39 @@
     </div>
     <div id="main-content" class="main w-full">
         <div data-color="black" class="home section w-full h-[200vh] relative">
-            <h2 class="absolute top-10 font-semibold left-[2%] te z-10 text-white">© Code by Priyank Verma</h2>
-            <div class="locate vdodiv absolute w-[40%] h-[8%] rounded-full -translate-x-1/2 -translate-y-[100%] top-1/4 left-0 bg-yellow-700 z-[98] flex items-center justify-center">
-                <h3 class="text-2xl translate-x-[140%] text-white">Located<br>In<br>India</h3>
-                <img class="w-[15%] translate-x-[210%] rounded-full" src="787.gif" alt="">
-            </div>
+            
             
              <div class="w-full sticky top-0 left-0">
-                <div class="btmtext absolute bottom-[7%] left-[3%] z-[4] w-52">
-                    <h1>We build big ideas.
-                        Software. Apps. Tools.
-                        For real people. Real lives.</h1>
-                </div>
                 <div class="vdodiv w-full h-screen absolute z-[3] top-0 left-0 bg-black">
+                    <div class="scroll-section w-1/3 flex items-center justify-center mt-8 absolute top-10 font-semibold left-[2%] te z-10 text-white translate-x-[190%] translate-y-[200%]">
+                        <h1 class="text-4xl font-bold">Scroll</h1>
+                        <!-- Animated Down Arrow -->
+                        <div class="ml-4 animate-bounce">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </div>
+                    </div>
                     <img class="absolute w-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden" src="profile.png" alt="">
+                    <div class="locate absolute w-[40%] h-[15%] rounded-full -translate-x-1/2 translate-y-[100%] top-1/4 left-0 bg-yellow-700 z-[98] flex items-center justify-center">
+                        <h3 class="text-2xl translate-x-[140%] text-white">Located<br>In<br>India</h3>
+                        <img class="w-[15%] translate-x-[210%] rounded-full" src="787.gif" alt="">
+                    </div>
+                    <h2 class="absolute top-10 font-semibold left-[2%] te z-10 text-white">© Code by Priyank Verma</h2>
+                   
+                    
+                    <div id="swipper" class="overflow-hidden translate-y-[120%]">
+                        <div class="swiper-container font-[rj]">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide ">
+                                <h1 class="flex overflow-hidden "><span class="">P</span><span>R</span><span>I</span><span>Y</span><span>A</span><span>N</span><span>K</span><span>-</span></h1>
+                              </div>
+                              <div class="swiper-slide ">
+                                <h1 class="flex overflow-hidden bottom-0 -translate-y-"><span>V</span><span>E</span><span>R</span><span>M</span><span>A</span><span>-</span></h1>
+                              </div>
+                            </div>
+                    </div>
+                </div>
                 </div>
                 <div class="marqueescontainer w-full h-screen relative overflow-hidden">
                     <div class="heading absolute top-[7%] left-1/2 -translate-x-1/2 w-60 text-center">
@@ -185,12 +207,9 @@
 
         <div data-color="cyan" id="craft" class="craft section w-full flex justify-between items-start gap-10 py-10 px-10 relative">
             <div class="ltext w-[40%] sticky top-0 left-0">
-                <h1 class="text-[4rem] leading-[6.5rem] mb-10 font-[Machina]">About Me</h1>
+                <h1 class="text-[4rem] leading-[6.5rem] mb-8 font-[Machina]">About Me</h1>
                 <p class="text-3xl font-regular leading-[3rem]">
-                    Significo is a custom health software developer founded on the belief
-                    that technology can transform healthcare to put people first. We put
-                    humanity back at the center of healthcare with technology that
-                    simplifies complexity, accelerates capacity, and improves outcomes.
+                    I am a passionate web developer who thrives on exploring the digital landscape. With a strong commitment to learning and teamwork, I believe that collaboration leads to extraordinary results. In a fast-paced world of constant innovation, I embrace change and strive to build remarkable projects together.
                 </p>
                 <div class="w-fit px-10 py-5 border-[1px] mt-10 border-[--dcyan]">
                     <div class="masker overflow-hidden">
@@ -198,13 +217,22 @@
                     </div>
                 </div>
             </div>
-            <div class="cards  w-1/2 py-10">
-               <h1 class="text-3xl">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur voluptatum fugiat esse! Beatae cupiditate odit quae vitae sit ea debitis. Architecto temporibus rem eveniet non assumenda provident dolor, quae inventore.
-               Reprehenderit, quisquam! Necessitatibus expedita ipsam eaque quae, soluta voluptatum porro veritatis ipsum, mollitia molestiae ad iusto, maiores accusamus dignissimos deleniti saepe? Aliquam obcaecati enim facilis doloremque, itaque odit exercitationem quidem.
-               Ea quae quisquam dignissimos similique consectetur magnam placeat facilis reprehenderit cumque odio a ducimus necessitatibus nostrum quaerat deserunt tenetur expedita eaque velit facere sunt iste labore, error rerum deleniti. Veniam?
-               Alias corrupti quae sint? Ex repudiandae optio voluptatum dolorum explicabo corporis quam, enim quibusdam dicta rem eaque earum. Ducimus libero porro voluptatum facilis mollitia nisi alias deserunt eius odio architecto.
-               Fugiat dicta aspernatur facere sint necessitatibus quae nobis minus, ipsam illum, itaque sed voluptas incidunt iure. Ipsum, id, sunt doloremque veniam omnis cumque fugiat excepturi voluptatum, soluta placeat temporibus alias. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis sequi maiores laborum dolores ab modi impedit natus placeat corporis asperiores in a, debitis quia nemo repellendus repudiandae sit accusamus voluptatibus.</h1>
+            <div class="cards w-1/2 py-10 space-y-6">
+                <div class="card opacity-0 translate-y-20 w-[20%] h-[20%] border-2 transition-transform duration-700 ease-in-out">
+                    <h2 class="text-xl font-bold">Project Title 1</h2>
+                    <p>Description of project 1.</p>
+                </div>
+                <div class="card opacity-0 translate-y-20 transition-transform duration-700 ease-in-out">
+                    <h2 class="text-xl font-bold">Project Title 2</h2>
+                    <p>Description of project 2.</p>
+                </div>
+                <div class="card opacity-0 translate-y-20 transition-transform duration-700 ease-in-out">
+                    <h2 class="text-xl font-bold">Project Title 3</h2>
+                    <p>Description of project 3.</p>
+                </div>
+                <!-- Add more cards as needed -->
             </div>
+            
         </div>
         <div data-color="salmon" class="real section w-full">
             <div class="cont h-[400vh] relative font-[Machina]">
@@ -269,45 +297,50 @@
                     <div class="relative flex items-center justify-between z-[3] ">
                         <div class="left flex gap-20 ">
                             <h3 class="text-5xl" >01</h3>
-                            <h1 class="text-5xl">Dr. Ric McCnjsd</h1>
+                            <h1 class="text-5xl">Rejouice</h1>
                         </div>
-                        <h3 class="text-3xl">CEO</h3>
+                        <h3 class="text-3xl">Developed</h3>
                     </div>
-                    <div class="pic opacity-0 absolute z-[4] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[15rem] h-[15rem] overflow-hidden rounded-full bg-red-600"></div>
+                    <div class="pic opacity-0 absolute z-[4] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[15rem] h-[15rem] overflow-hidden rounded-full">
+                        <img class="w-full h-full object-cover" src="rejouice.png" alt="">
+                    </div>
                     <div class="bluelayer absolute bottom-0 left-0 z-[2] w-full h-[0%] bg-blue-500 "></div>
                 </div>
                 <div class="listelem border-b-2 border-black w-full py-[3rem]  relative" >
                     <div class="relative flex items-center justify-between z-[3] ">
                         <div class="left flex gap-20 ">
-                            <h3 class="text-5xl" >01</h3>
-                            <h1 class="text-5xl">Dr. Ric McCnjsd</h1>
+                            <h3 class="text-5xl" >02</h3>
+                            <h1 class="text-5xl">Spotify Clone</h1>
                         </div>
-                        <h3 class="text-3xl">CEO</h3>
+                        <h3 class="text-3xl">Developed</h3>
                     </div>
-                    <div class="pic opacity-0 absolute z-[4] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[15rem] h-[15rem] overflow-hidden rounded-full bg-red-600"></div>
-                    <div class="bluelayer absolute bottom-0 left-0 z-[2] w-full h-[0%] bg-blue-500 "></div>
+                    <div class="pic opacity-0 absolute z-[4] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[15rem] h-[15rem] overflow-hidden rounded-full">
+                        <img class="w-full h-full object-cover" src="spotify.png" alt="">
+                    </div>                    <div class="bluelayer absolute bottom-0 left-0 z-[2] w-full h-[0%] bg-blue-500 "></div>
                 </div>
                 <div class="listelem border-b-2 border-black w-full py-[3rem]  relative" >
                     <div class="relative flex items-center justify-between z-[3] ">
                         <div class="left flex gap-20 ">
-                            <h3 class="text-5xl" >01</h3>
-                            <h1 class="text-5xl">Dr. Ric McCnjsd</h1>
+                            <h3 class="text-5xl" >03</h3>
+                            <h1 class="text-5xl">Hospital Management System</h1>
                         </div>
-                        <h3 class="text-3xl">CEO</h3>
+                        <h3 class="text-3xl">Developed</h3>
                     </div>
-                    <div class="pic opacity-0 absolute z-[4] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[15rem] h-[15rem] overflow-hidden rounded-full bg-red-600"></div>
-                    <div class="bluelayer absolute bottom-0 left-0 z-[2] w-full h-[0%] bg-blue-500 "></div>
+                    <div class="pic opacity-0 absolute z-[4] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[15rem] h-[15rem] overflow-hidden rounded-full">
+                        <img class="w-full h-full object-cover" src="rejouice.png" alt="">
+                    </div>                    <div class="bluelayer absolute bottom-0 left-0 z-[2] w-full h-[0%] bg-blue-500 "></div>
                 </div>
                 <div class="listelem border-b-2 border-black w-full py-[3rem]  relative" >
                     <div class="relative flex items-center justify-between z-[3] ">
                         <div class="left flex gap-20 ">
-                            <h3 class="text-5xl" >01</h3>
-                            <h1 class="text-5xl">Dr. Ric McCnjsd</h1>
+                            <h3 class="text-5xl" >04</h3>
+                            <h1 class="text-5xl">Course Guard</h1>
                         </div>
-                        <h3 class="text-3xl">CEO</h3>
+                        <h3 class="text-3xl">Developed</h3>
                     </div>
-                    <div class="pic opacity-0 absolute z-[4] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[15rem] h-[15rem] overflow-hidden rounded-full bg-red-600"></div>
-                    <div class="bluelayer absolute bottom-0 left-0 z-[2] w-full h-[0%] bg-blue-500 "></div>
+                    <div class="pic opacity-0 absolute z-[4] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[15rem] h-[15rem] overflow-hidden rounded-full">
+                        <img class="w-full h-full object-cover" src="courseguard.png" alt="">
+                    </div>                    <div class="bluelayer absolute bottom-0 left-0 z-[2] w-full h-[0%] bg-blue-500 "></div>
                 </div>
             </div>
             
@@ -354,7 +387,45 @@
                 </div>
             </div>
         </div>
-        
+ 
+        <footer class="footer bg-black text-white py-8">
+            <div class="container mx-auto text-center">
+                <!-- Footer Icons -->
+                <div class="social-icons flex justify-center space-x-8 mb-4">
+                    <!-- Instagram -->
+                    <a href="https://instagram.com/realpriyankexists" target="_blank" class="hover:text-pink-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.055 1.966.24 2.419.413.579.22.995.484 1.435.924.44.44.704.856.924 1.435.173.453.358 1.25.413 2.419.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.055 1.17-.24 1.966-.413 2.419-.22.579-.484.995-.924 1.435-.44.44-.856.704-1.435.924-.453.173-1.25.358-2.419.413-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.055-1.966-.24-2.419-.413-.579-.22-.995-.484-1.435-.924-.44-.44-.704-.856-.924-1.435-.173-.453-.358-1.25-.413-2.419C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.055-1.17.24-1.966.413-2.419.22-.579.484-.995.924-1.435.44-.44.856-.704 1.435-.924.453-.173 1.25-.358 2.419-.413C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.735 0 8.332.014 7.052.072 5.772.129 4.86.312 4.12.635c-.785.335-1.448.779-2.112 1.444-.664.664-1.108 1.327-1.444 2.112-.323.74-.506 1.652-.563 2.932C.014 8.332 0 8.735 0 12s.014 3.668.072 4.948c.057 1.28.24 2.192.563 2.932.335.785.779 1.448 1.444 2.112.664.664 1.327 1.108 2.112 1.444.74.323 1.652.506 2.932.563C8.332 23.986 8.735 24 12 24s3.668-.014 4.948-.072c1.28-.057 2.192-.24 2.932-.563.785-.335 1.448-.779 2.112-1.444.664-.664 1.108-1.327 1.444-2.112.323-.74.506-1.652.563-2.932.058-1.28.072-1.683.072-4.948s-.014-3.668-.072-4.948c-.057-1.28-.24-2.192-.563-2.932-.335-.785-.779-1.448-1.444-2.112-.664-.664-1.327-1.108-2.112-1.444-.74-.323-1.652-.506-2.932-.563C15.668.014 15.265 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.165a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 1-2.879 0 1.44 1.44 0 0 1 2.879 0z"/>
+                        </svg>
+                    </a>
+                    <!-- Twitter -->
+                    <a href="https://twitter.com/priyanktweetss" target="_blank" class="hover:text-blue-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M23.954 4.569c-.885.392-1.83.656-2.825.775 1.014-.608 1.794-1.57 2.163-2.723-.949.564-2.003.974-3.127 1.195-.896-.957-2.173-1.555-3.594-1.555-2.72 0-4.924 2.204-4.924 4.923 0 .39.044.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.729-.666 1.577-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.247-2.23-.616v.062c0 2.386 1.693 4.374 3.946 4.827-.413.111-.848.171-1.296.171-.316 0-.624-.03-.927-.086.624 1.951 2.444 3.374 4.597 3.412-1.68 1.317-3.809 2.103-6.102 2.103-.396 0-.787-.023-1.175-.068 2.179 1.397 4.768 2.213 7.548 2.213 9.054 0 14.002-7.496 14.002-13.986 0-.213-.004-.425-.013-.636.961-.694 1.8-1.562 2.462-2.549z"/>
+                        </svg>
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/priyank-verma-0b88a528b/" target="_blank" class="hover:text-blue-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M22.23 0H1.771C.792 0 0 .774 0 1.73v20.54C0 23.226.792 24 1.771 24H22.23C23.209 24 24 23.226 24 22.27V1.73C24 .774 23.209 0 22.23 0zM7.06 20.452H3.563V9.034H7.06v11.418zm-1.748-13.08c-1.123 0-2.034-.91-2.034-2.034 0-1.125.911-2.034 2.034-2.034 1.126 0 2.035.91 2.035 2.034 0 1.125-.91 2.034-2.035 2.034zm15.792 13.08H16.79v-5.725c0-1.364-.026-3.116-1.9-3.116-1.9 0-2.19 1.483-2.19 3.014v5.827H9.287V9.034h3.407v1.561h.048c.475-.9 1.632-1.848 3.36-1.848 3.591 0 4.252 2.363 4.252 5.438v6.267z"/>
+                        </svg>
+                    </a>
+                    <!-- Mail -->
+                    <a href="mailto:pvonlyone29@gmail,com" target="_blank" class="hover:text-red-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 12.713l11.985-7.199a.984.984 0 0 0-.153-.151L12 11.32 1.168 5.363a.988.988 0 0 0-.153.151l11.985 7.199zm0 2.438l-12-7.2V18c0 1.102.896 2 2 2h20c1.104 0 2-.898 2-2v-9.05l-12 7.2z"/>
+                        </svg>
+                    </a>
+                    <!-- GitHub -->
+                    <a href="https://github.com/Me-Priyank" target="_blank" class="hover:text-gray-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 .297C5.373.297 0 5.67 0 12.297c0 5.302 3.438 9.8 8.205 11.387.6.11.82-.261.82-.577 0-.285-.011-1.04-.016-2.04-3.338.724-4.042-1.611-4.042-1.611-.546-1.387-1.332-1.757-1.332-1.757-1.09-.745.084-.729.084-.729 1.204.084 1.838 1.236 1.838 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.774.418-1.305.762-1.605-2.665-.305-5.466-1.332-5.466-5.931 0-1.31.469-2.382 1.236-3.221-.124-.303-.535-1.524.118-3.176 0 0 1.008-.323 3.3 1.23.96-.267 1.983-.399 3.003-.404 1.02.005 2.043.137 3.003.404 2.29-1.553 3.298-1.23 3.298-1.23.654 1.652.243 2.873.119 3.176.77.839 1.234 1.911 1.234 3.221 0 4.61-2.803 5.623-5.474 5.921.43.372.823 1.102.823 2.222 0 1.605-.014 2.899-.014 3.293 0 .319.219.694.826.576C20.565 22.092 24 17.595 24 12.297 24 5.67 18.627.297 12 .297z"/>
+                        </svg>
+                    </a>
+                </div>
+                <p class="text-gray-400">&copy; 2024 Priyank Verma. All rights reserved.</p>
+            </div>
+        </footer>
         
         
         
