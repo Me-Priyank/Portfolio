@@ -91,9 +91,30 @@ window.addEventListener('load', () => {
 
 
 
+// Get the scrollToTop button
+const scrollToTopBtn = document.getElementById('scrollToTop');
+
+// Show button after scrolling 100px
+window.onscroll = function () {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        scrollToTopBtn.classList.add('show');
+    } else {
+        scrollToTopBtn.classList.remove('show');
+    }
+};
+
+// Scroll to the top when the button is clicked
+scrollToTopBtn.addEventListener('click', function (e) {
+    e.preventDefault(); // Prevent default anchor behavior
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Smooth scrolling effect
+    });
+});
 
 
   
+
   
   
 

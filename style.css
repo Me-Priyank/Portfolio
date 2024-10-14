@@ -26,9 +26,9 @@ body{
 }
 
 .swiper-slide h1{
-    opacity: 0.8;
+    opacity: 0.9;
     font-family: 'rj';
-    font-size: 24vw;
+    font-size: 18vw;
     font-weight: 100;
     line-height: 27vw;
 }
@@ -272,4 +272,104 @@ body[theme="white"] .section{
     }
 }
 
+
+
+
+#scrollToTop {
+    z-index: 111;
+    position: fixed; /* Sticks the button in place */
+    bottom: 30px; /* Distance from the bottom */
+    right: 30px; /* Distance from the right */
+    background-color: #1f2937; /* Dark background color */
+    color: white; /* Arrow color */
+    padding: 10px; /* Padding around the button */
+    border-radius: 50%; /* Make the button circular */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for 3D effect */
+    cursor: pointer; /* Changes the mouse cursor to a pointer on hover */
+    display: none; /* Initially hidden */
+    transition: opacity 0.3s ease-in-out; /* Smooth appearance */
+}
+
+#scrollToTop:hover {
+    background-color: #4b5563; /* Change background color on hover */
+}
+
+#scrollToTop svg {
+    width: 24px; /* Adjust the size of the arrow */
+    height: 24px;
+}
+
+#scrollToTop.show {
+    display: block; /* Make the button visible */
+    opacity: 1; /* Fade it in */
+}
+
+/* For the Resume button hover effect */
+.resume-button {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.resume-button:hover {
+    transform: scale(1.1); /* Slight zoom-in effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Increase shadow depth */
+    border-color: var(--dcyan); /* Optional: Change border color on hover */
+}
+
+/* For inner text animation */
+.resume-button .masker {
+    overflow: hidden;
+    position: relative;
+}
+
+.resume-button .masker span {
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.resume-button:hover .masker span {
+    transform: translateY(-5px); /* Moves the text slightly upwards on hover */
+}
+
+
+.skills {
+    
+    gap: 20px; /* Adjust the spacing between cards */
+}
+
+.skill {
+    width: 450px; /* Make the skill cards take 3 per row */
+    height: auto;
+    padding: 20px;
+    border: 2px solid #ccc;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between icon and text */
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.skill img {
+    width: 40px; /* Size of the skill icons */
+    height: 40px;
+}
+
+.skill h2 {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+/* Hover effect */
+.skill:hover {
+    background-color: black;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Make sure animations work when scrolling */
+.skill.opacity-0 {
+    opacity: 1;
+    transform: translateY(0);
+}
 
