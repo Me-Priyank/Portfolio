@@ -107,7 +107,7 @@ body[theme="white"] .section{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vh;
+    height: 40vh;
     background-color: #f0f4f8;
     font-family: 'Roboto', sans-serif;
 }
@@ -115,7 +115,7 @@ body[theme="white"] .section{
 /* Chat Window */
 .chat-window {
     width: 380px;
-    height: 600px;
+    height: 550px;
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
