@@ -8,6 +8,7 @@ import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
 import Cursor from "@/components/site/Cursor";
 import ScrollProgress from "@/components/site/ScrollProgress";
+import Preloader from "@/components/site/Preloader";
 import { profile } from "@/lib/data";
 
 const sans = Geist({ subsets: ["latin"], variable: "--font-sans" });
@@ -61,6 +62,7 @@ export default function RootLayout({
       className={`${sans.variable} ${mono.variable} ${serif.variable} ${display.variable} ${machina.variable}`}
     >
       <body className="antialiased">
+        <Preloader />
         <div className="grain" aria-hidden />
         <ScrollProgress />
         <Cursor />

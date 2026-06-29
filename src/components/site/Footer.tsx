@@ -21,7 +21,7 @@ export default function Footer() {
 
   return (
     <footer className="relative overflow-hidden border-t border-line px-4 pt-24 sm:px-6">
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-5xl">
         <Reveal>
           <p className="eyebrow mb-6">Have an idea?</p>
         </Reveal>

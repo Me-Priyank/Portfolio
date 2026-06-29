@@ -9,7 +9,7 @@ export default function FeaturedWork() {
 
   return (
     <section className="px-4 pt-28 sm:px-6 sm:pt-36">
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-5xl">
         <Reveal>
           <div className="mb-10 flex items-end justify-between gap-4">
             <h2 className="display-lg font-display text-fg">

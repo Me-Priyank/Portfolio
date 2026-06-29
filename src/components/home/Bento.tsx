@@ -10,7 +10,7 @@ export default function Bento() {
     <section id="about" className="relative px-4 pt-28 sm:px-6 sm:pt-36">
       <div className="grid-bg pointer-events-none absolute inset-x-0 top-0 -z-10 h-[420px]" />
 
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-5xl">
         <Reveal>
           <div className="mb-10 flex items-end justify-between gap-4">
             <h2 className="display-lg font-display text-fg">
@@ -82,7 +82,7 @@ export default function Bento() {
                   {principles.map((p, idx) => (
                     <div
                       key={p.title}
-                      className="flex gap-4 border-b border-line py-4 last:border-b-0"
+                      className="flex gap-4 border-b border-line py-4 mb-[-6] last:border-b-0"
                     >
                       <span className="font-mono text-xs text-accent">
                         {String(idx + 1).padStart(2, "0")}

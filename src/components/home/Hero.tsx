@@ -6,24 +6,26 @@ import { motion } from "motion/react";
 import { ArrowDownRight } from "lucide-react";
 import { profile } from "@/lib/data";
 import Magnetic from "@/components/ui/Magnetic";
+import { useIntroReady } from "@/lib/useIntroReady";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
-/** Independent entrance: each element drives its own animation so nothing
- *  depends on fragile parent orchestration. */
-const rise = (delay: number) => ({
+/** Independent entrance: each element drives its own animation, but it only
+ *  starts once the loader has lifted so the reveal plays in full view. */
+const rise = (delay: number, ready: boolean) => ({
   initial: { opacity: 0, y: 22 },
-  animate: { opacity: 1, y: 0 },
+  animate: ready ? { opacity: 1, y: 0 } : { opacity: 0, y: 22 },
   transition: { duration: 0.9, ease, delay },
 });
 
-const line = (delay: number) => ({
+const line = (delay: number, ready: boolean) => ({
   initial: { y: "115%" },
-  animate: { y: "0%" },
+  animate: ready ? { y: "0%" } : { y: "115%" },
   transition: { duration: 1.1, ease, delay },
 });
 
 export default function Hero() {
+  const ready = useIntroReady();
   return (
     <section className="relative px-4 pt-28 sm:px-6 sm:pt-36 lg:pt-44">
       {/* ambient glows */}
@@ -35,12 +37,12 @@ export default function Hero() {
         <div className="absolute right-0 top-44 size-[30rem] rounded-full bg-sky-500/[0.08] blur-[130px]" />
       </div>
 
-      <div className="mx-auto grid max-w-6xl grid-cols-1 items-end gap-8 lg:grid-cols-[1.5fr_1fr] lg:gap-12">
+      <div className="mx-auto grid max-w-5xl grid-cols-1 items-end gap-8 lg:grid-cols-[1.5fr_1fr] lg:gap-12">
         {/* Left: headline */}
         <div>
           <motion.div
-            {...rise(0.1)}
-            className="mb-7 flex flex-wrap items-center gap-x-4 gap-y-2"
+            {...rise(0.1, ready)}
+            className="mb-7 flex flex-wrap items-center gap-x-4 gap-y-2 lg:mb-5"
           >
             <span className="eyebrow">
               {profile.role} · {profile.location}
@@ -58,18 +60,18 @@ export default function Hero() {
 
           <h1 className="display-xl font-display text-fg">
             <span className="block overflow-hidden pb-[0.06em]">
-              <motion.span {...line(0.18)} className="block">
+              <motion.span {...line(0.18, ready)} className="block">
                 Software
               </motion.span>
             </span>
             <span className="block overflow-hidden pb-[0.06em]">
-              <motion.span {...line(0.28)} className="block">
+              <motion.span {...line(0.28, ready)} className="block">
                 that feels
               </motion.span>
             </span>
             <span className="block overflow-hidden pb-[0.06em]">
               <motion.span
-                {...line(0.38)}
+                {...line(0.38, ready)}
                 className="block font-serif italic text-accent"
               >
                 intentional.
@@ -78,15 +80,15 @@ export default function Hero() {
           </h1>
 
           <motion.p
-            {...rise(0.55)}
-            className="mt-8 max-w-md text-base leading-relaxed text-muted sm:text-lg"
+            {...rise(0.55, ready)}
+            className="mt-8 max-w-md text-base leading-relaxed text-muted sm:text-lg lg:mt-6"
           >
             {profile.intro}
           </motion.p>
 
           <motion.div
-            {...rise(0.68)}
-            className="mt-9 flex flex-wrap items-center justify-center gap-4 sm:justify-start"
+            {...rise(0.68, ready)}
+            className="mt-9 flex flex-wrap items-center justify-center gap-4 sm:justify-start lg:mt-7"
           >
             <Magnetic>
               <Link
@@ -111,7 +113,7 @@ export default function Hero() {
         {/* Right: portrait card */}
         <motion.div
           initial={{ opacity: 0, scale: 0.94 }}
-          animate={{ opacity: 1, scale: 1 }}
+          animate={ready ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.94 }}
           transition={{ duration: 1.1, ease, delay: 0.3 }}
           className="relative w-full lg:max-w-none"
         >
@@ -139,7 +141,7 @@ export default function Hero() {
       </div>
 
       {/* scroll hint */}
-      <div className="mx-auto mt-14 flex max-w-6xl items-center justify-between border-t border-line pt-6 sm:mt-20">
+      <div className="mx-auto mt-14 flex max-w-5xl items-center justify-between border-t border-line pt-6 sm:mt-20">
         <span className="eyebrow">Scroll to explore</span>
         <span className="eyebrow hidden sm:block">{profile.tagline}</span>
       </div>

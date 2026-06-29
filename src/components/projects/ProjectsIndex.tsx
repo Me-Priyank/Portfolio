@@ -9,7 +9,7 @@ const ease = [0.16, 1, 0.3, 1] as const;
 export default function ProjectsIndex() {
   return (
     <section className="px-4 pt-32 sm:px-6 sm:pt-40">
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-5xl">
         {/* Header */}
         <header className="mb-10 sm:mb-14">
           <motion.span
