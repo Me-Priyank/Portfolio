@@ -105,7 +105,7 @@ html.lenis body {
 .display-xl {
   /* cap lowered (11rem -> 6.5rem) so the hero fits above the fold on desktop;
      mobile is driven by 13vw/3rem so it is unchanged */
-  font-size: clamp(3rem, 13vw, 7rem);
+  font-size: clamp(3rem, 13vw, 7.4rem);
   line-height: 0.94;
   letter-spacing: -0.03em;
 }
